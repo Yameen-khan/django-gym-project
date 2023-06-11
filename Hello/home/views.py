@@ -26,7 +26,7 @@ def gyms(request):
         current_location = request.POST.get('location')
 
         # Make a request to the API to find nearby gyms
-        api_key = 'AIzaSyAOL4klHvA-CM-gQuIlzAo_ee__LT3czi4'  # Replace with your actual API key
+        api_key = ''  # Replace with your actual API key
         endpoint = f'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={current_location}&radius=1000&type=gym&key=AIzaSyAOL4klHvA-CM-gQuIlzAo_ee__LT3czi4'
         response = requests.get(endpoint)
         data = response.json()
