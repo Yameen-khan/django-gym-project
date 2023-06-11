@@ -1,0 +1,396 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Global styles */
+       
+
+        /* Hero section styles */
+        .hero {
+            background-image: url('{% static 'four.jpg' %}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #000000;
+}
+        
+        .hero h3 {
+            font-size: 20px;
+             color: #b20296;
+}
+
+        .hero .icon-link {
+    display: inline-flex;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 800;
+    margin-top: 6px;
+    margin-bottom: -10;
+    margin-right: -27;
+}
+        .about-us-box {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.about-us-box:hover {
+    background-color: #8d3a3a;
+}
+
+.about-us-box a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-us-box svg {
+    margin-left: 5px;
+}
+
+        .hero .icon-link svg {
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
+        }
+
+        /* Services section styles */
+        .services {
+            margin-top: 100px;
+        }
+
+        .services h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 50px;
+        }
+
+        .services .card {
+            border-radius: 10px;
+            border: none;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .services .card:hover {
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .services .card-img-top {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .services .card-img-top img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .services .card .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .services .card:hover .overlay {
+            opacity: 1;
+        }
+
+        .services .card .card-body {
+            padding: 20px;
+        }
+
+        .services .card .card-text {
+            font-size: 16px;
+            color: #555555;
+        }
+
+        /* Active Clients section styles */
+        .active-clients {
+            margin-top: 100px;
+        }
+
+        .active-clients h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 50px;
+        }
+
+        .active-clients .chart {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+        }
+
+        /* Learn Online section styles */
+        .learn-online {
+            margin-top: 100px;
+            margin-bottom: 130px;
+            
+        }
+
+        .learn-online h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 50px;
+        }
+
+        .learn-online .carousel-indicators {
+            bottom: -50px;
+        }
+
+        .learn-online .carousel-control {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .learn-online .carousel-control i {
+            font-size: 40px;
+            color: #333333;
+        }
+
+        .learn-online .thumbnail {
+            display: block;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border: none;
+        }
+
+        .learn-online .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section-separator {
+    height: 2px;
+    background-color: black;
+    border: none;
+    margin: 30px auto;
+    width: 50%;
+}
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
+            <h1 class="display-3 fw-bold">Empowering Fitness and Wellness for All</h1>
+            <h3 class="fw-normal mb-3 my-5">Helping You Achieve Your Health Goals Through Knowledge and Support</h3>
+            <div class="about-us-container">
+                <div class="about-us-box">
+                    <div class="d-flex gap-3 mx-6 justify-content-center lead fw-normal">
+                        <a class="icon-link my-10" href="/about">
+                            About Us
+                            <svg class="bi">
+                                <use xlink:href="#chevron-right"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section class="services">
+        <div class="container my-5">
+            <h1 class="my-5 text-center">Our Services</h1>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 my-5 mx-2">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <a href="/gyms">
+                            <div class="card-img-top position-relative">
+                                <img src="{% static 'gym.jpg' %}" class="img-fluid" alt="Image Description">
+                                <div class="overlay d-flex justify-content-center align-items-center"></div>
+                            </div>
+                        </a>
+                        <div class="card-body">
+                            <p class="card-text">Locate a Nearby GYM around you.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <a href="/dietchart">
+                            <div class="card-img-top position-relative">
+                                <img src="{% static 'diet.jpg' %}" class="img-fluid" alt="Image Description">
+                                <div class="overlay d-flex justify-content-center align-items-center"></div>
+                            </div>
+                        </a>
+                        <div class="card-body">
+                            <p class="card-text">Create your own Diet chart with AI.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <a href="/wellnessresources">
+                            <div class="card-img-top position-relative">
+                                <img src="{% static 'wellness.jpg' %}" class="img-fluid" alt="Image Description">
+                                <div class="overlay d-flex justify-content-center align-items-center"></div>
+                            </div>
+                        </a>
+                        
+                        <div class="card-body">
+                            <p class="card-text">Buy wellness products</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr class="section-separator">
+
+    <section class="active-clients">
+        <div class="container">
+            <h1 class="my-5 text-center">Active Clients</h1>
+            <div class="chart">
+                <canvas id="pieChart"></canvas>
+            </div>
+        </div>
+        <hr class="section-separator">
+    </section>
+
+    <section class="learn-online">
+        <div class="container">
+            <h1 class="my-5 text-center">Learn Online from the Best</h1>
+            <div id="Carousel" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#Carousel" data-bs-slide-to="0" class="active"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="https://www.youtube.com/watch?v=MwHtUKyLrac&pp=ygUQZml0bmVzcyBjbGFzc3Nlcw%3D%3D" class="thumbnail">
+                                    <img src="https://source.unsplash.com/300x300/?gymgirl,weights" alt="Image" style="max-width:100%;">
+                                    <div class="carousel-caption">
+                                        <h5>ZUMBA CLASS</h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Repeat the same structure for the other images -->
+                            <div class="col-md-3">
+                                <a href="https://www.youtube.com/watch?v=DOtr16U8V2M&pp=ygUUZml0bmVzcyBjbGFzc3NlcyBtZW4%3D" class="thumbnail">
+                                    <img src="https://source.unsplash.com/300x300/?bodybuilder" alt="Image" style="max-width:100%;">
+                                    <div class="carousel-caption">
+                                        <h5>YEOH FITNESS</h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="https://www.youtube.com/watch?v=s2NQhpFGIOg&pp=ygUUZml0bmVzcyBjbGFzc3NlcyBtZW4%3D" class="thumbnail">
+                                    <img src="https://source.unsplash.com/300x300/?yoga" alt="Image" style="max-width:100%;">
+                                    <div class="carousel-caption">
+                                        <h5>FIT TUBER</h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="https://www.youtube.com/watch?v=NMSOpenaNRM" class="thumbnail">
+                                    <img src="https://source.unsplash.com/300x300/?exercise" alt="Image" style="max-width:100%;">
+                                    <div class="carousel-caption">
+                                        <h5>PANDA FITNESS</h5>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#Carousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#Carousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Pie chart data
+        var pieChartData = {
+            labels: ['Asia', 'Europe', 'North America', 'South America', 'Africa', 'Oceania'],
+            datasets: [{
+                data: [80, 65, 30, 10, 80, 20],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.8)',
+                    'rgba(54, 162, 235, 0.8)',
+                    'rgba(255, 205, 86, 0.8)',
+                    'rgba(75, 192, 192, 0.8)',
+                    'rgba(153, 102, 255, 0.8)',
+                    'rgba(255, 159, 64, 0.8)'
+                ],
+                hoverOffset: 4
+            }]
+        };
+
+        // Pie chart options
+        var pieChartOptions = {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: {
+                            size: 14
+                        }
+                    }
+                }
+            }
+        };
+
+        // Create pie chart
+        var pieChart = new Chart(document.getElementById('pieChart'), {
+            type: 'pie',
+            data: pieChartData,
+            options: pieChartOptions
+        });
+    </script>
+</body>
+</html>
+
+
+
+{% endblock body %}

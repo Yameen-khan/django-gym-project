@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wellness Resources</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+            justify-items: center;
+        }
+
+        .grid-item {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-item a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        .grid-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .grid-item p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wellness Resources</h1>
+
+    <div class="grid">
+        <div class="grid-item">
+            <a href="https://www.amazon.in/s?k=gym+equipment" target="_blank">
+                <img src="https://source.unsplash.com/300x300/?gym," alt="Amazon Gym Equipment">
+                <p>Shop on Amazon</p>
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="https://www.myntra.com/gym-equipment" target="_blank">
+                <img src="https://source.unsplash.com/300x300/?weights" alt="Myntra Gym Equipment">
+                <p>Shop on Myntra</p>
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="https://www.flipkart.com/search?q=gym+equipment" target="_blank">
+                <img src="https://source.unsplash.com/300x300/?fitness" alt="Flipkart Gym Equipment">
+                <p>Shop on Flipkart</p>
+            </a>
+        </div>
+        <!-- Add more grid items for other e-commerce websites -->
+    </div>
+
+    <script>
+        // Animate the grid items using CSS animations
+        const gridItems = document.querySelectorAll('.grid-item');
+        gridItems.forEach((item, index) => {
+            item.style.animationDelay = `${index * 100}ms`;
+            item.classList.add('animate-grid-item');
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+{% endblock body %}

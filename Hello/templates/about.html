@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FitFusion - About Us</title>
+    <style>
+        .about-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .container {
+            margin-bottom: 190px;
+        }
+
+        .about-heading {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 160px;
+        }
+
+        .about-description {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .owner-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .owner-info img {
+            width: 150px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .owner-info h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .owner-info p {
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 767px) {
+            .owner-info {
+                flex-direction: column;
+            }
+
+            .owner-info img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="about-section">
+        <div class="container">
+            <h2 class="about-heading">About Us</h2>
+            <p class="about-description">FitFusion is a non-profit organization dedicated to helping individuals achieve their fitness and wellness goals. Our mission is to provide accessible and reliable information, resources, and support to empower people to lead healthier lives.</p>
+        </div>
+        <div class="owner-info">
+            <img src="{% static 'logo.png' %}" alt="Owner Image">
+            <div>
+                <h3>Yameen Khan</h3>
+                <p>Founder &amp; CEO</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+
+{% endblock body %}

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nearby Gyms</title>
+    <style>
+        /* Add custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .gyms-list {
+            list-style: none;
+            padding: 0;
+        }
+        .gym {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .gym-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .gym-address {
+            margin-top: 5px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nearby Gyms</h1>
+
+    {% if gyms %}
+        <p>Here are some gyms near your location:</p>
+        <ul class="gyms-list">
+            {% for gym in gyms %}
+                <li class="gym">
+                    <h3 class="gym-name">{{ gym.name }}</h3>
+                    <p class="gym-address">{{ gym.address }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No gyms found near your location.</p>
+    {% endif %}
+</body>
+</html>
+
+</body>
+</html>
+
+
+
+
+
+{% endblock body %}

@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Your Personalized Diet and Exercise Plan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .form-description {
+            text-align: center;
+            color: #777;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .form-field {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        select, input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Generate Your Personalized Diet and Exercise Plan</h2>
+        <p class="form-description">Please provide some information below to generate your plan:</p>
+        
+        <form method="POST" action="{% url 'dietchart' %}">
+            {% csrf_token %}
+            
+            <div class="form-field">
+                <label for="dietary_preferences">Dietary Preferences:</label>
+                <select id="dietary_preferences" name="dietary_preferences" required>
+                    <option value="">Select an option</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="Paleo">Paleo</option>
+                    <option value="Keto">Keto</option>
+                    <option value="Gluten-Free">Gluten-Free</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label for="fitness_goals">Fitness Goals:</label>
+                <select id="fitness_goals" name="fitness_goals" required>
+                    <option value="">Select an option</option>
+                    <option value="Weight Loss">Weight Loss</option>
+                    <option value="Muscle Gain">Muscle Gain</option>
+                    <option value="Improved Health">Improved Health</option>
+                    <option value="Increased Energy">Increased Energy</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label for="exercise_frequency">Exercise Frequency (per week):</label>
+                <input type="number" id="exercise_frequency" name="exercise_frequency" min="1" required>
+            </div>
+
+            <div class="form-field">
+                <label for="user_input">Additional Notes:</label>
+                <textarea id="user_input" name="user_input" rows="5" cols="50" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-button">Generate Plan</button>
+        </form>
+    </div>
+</body>
+
+</html>
+
+
+{% endblock body %}

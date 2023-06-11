@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            animation: fade-in 0.5s ease;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input[type="text"]:focus,
+        .contact-form textarea:focus {
+            border-color: #6c63ff;
+        }
+
+        .contact-form textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .contact-form button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #6c63ff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #4b45b2;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Contact Us</h1>
+
+    <div class="contact-form">
+        <form>
+            <input type="text" placeholder="Your Name">
+            <input type="text" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // Animate the contact form using CSS animation
+        const contactForm = document.querySelector('.contact-form');
+        contactForm.style.animation = 'fade-in 0.5s ease';
+    </script>
+</body>
+</html>
+
+{% endblock body %}
