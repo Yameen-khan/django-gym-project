@@ -31,6 +31,7 @@ cd fitfusion
 3. Install the required dependencies:
 
 pip install -r requirements.txt
+Also you need an google map API key and openAI key 
 
 
 4. Set up the database:
@@ -58,7 +59,7 @@ FitFusion is released under the [MIT License](https://opensource.org/licenses/MI
 
 ## Contact
 
-If you have any questions or need further assistance, please reach out to us at [email protected]
+If you have any questions or need further assistance, please reach out to us at yameenkhan9@gmail.com
 
 Happy fitness journey with FitFusion!
 
